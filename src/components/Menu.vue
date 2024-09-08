@@ -1,25 +1,10 @@
 <template>
-    <div id="menu-home">
-        <div class="container">
-          <div class="row">
-            <div id="login">
-              <div class="col-md-12">
-                <h1 class="text-center">Menu</h1>
-              </div>
-              <div class="col-md-12 text-center">
-                <button
-                    @click="start"
-                    id="start"
-                    type="button"
-                    class="btn btn-lg btn-dark"
-                >
-                  Start Game
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div id="menu-home">
+    <div class="menu-container">
+      <h1>Menu</h1>
+      <button @click="start" id="start">Start Game</button>
     </div>
+  </div>
 </template>
 
 <script>
@@ -41,6 +26,13 @@ export default {
   width: 100%;
 }
 
+.menu-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 h1 {
   font-size: 100px;
   font-weight: bold;
@@ -49,12 +41,6 @@ h1 {
 button {
   font-size: 40px;
   padding: 20px 65px;
-}
-
-#login {
-  padding: 25px;
-  margin: 0 auto;
-  margin-top: 25%;
 }
 
 #start {
