@@ -1,11 +1,13 @@
-<script setup>
+<script>
+
 </script>
 
 <template>
-  <main>
-    <router-view />
-  </main>
+  <div>
+    <h1>Board Game</h1>
+  </div>
 </template>
 
 <style scoped>
+
 </style>
