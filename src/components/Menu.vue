@@ -26,7 +26,7 @@
 export default {
   methods: {
     start() {
-      this.$router.push('start');
+      this.$router.push('play');
     },
   }
 };
