@@ -1,3 +1,4 @@
+<!-- src/components/Menu.vue -->
 <template>
   <div id="menu-home">
     <div class="menu-container">
@@ -19,31 +20,21 @@ export default {
 
 <style scoped>
 #menu-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
 .menu-container {
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
-  padding: 50px;
+  padding: 300px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-h1 {
-  font-size: 100px;
-  font-weight: bold;
-}
-
-button {
-  font-size: 40px;
-  padding: 20px 65px;
-}
-
-#start {
-  position: relative;
 }
 </style>
