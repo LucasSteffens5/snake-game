@@ -127,7 +127,7 @@ export default {
 
         foodLocationControl = false;
         this.snake.queue.forEach((element) => {
-          if (element.positionX == this.food.positionX && element.positionY == this.food.positionY) {
+          if (element.positionX === this.food.positionX && element.positionY === this.food.positionY) {
             foodLocationControl = true;
           }
         });
