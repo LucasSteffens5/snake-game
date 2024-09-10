@@ -155,7 +155,7 @@ export default {
     renderSnake() {
       let lineWidth = 1;
       this.snake.queue.forEach((element, index) => {
-        if (index == this.snake.queue.length - 1) {
+        if (index === this.snake.queue.length - 1) {
           this.board.context.fillStyle = "#0131cb";
           this.board.context.strokeStyle = "#ecf0f1";
           this.board.context.lineWidth = lineWidth + 5;
