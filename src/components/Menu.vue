@@ -3,7 +3,7 @@
   <div id="menu-home">
     <div class="menu-container">
       <h1>Menu</h1>
-      <button @click="start" id="start">Start Game</button>
+      <button @click="start" id="start">Iniciar</button>
     </div>
   </div>
 </template>

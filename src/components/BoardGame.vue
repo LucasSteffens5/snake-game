@@ -1,6 +1,7 @@
 <template>
   <div id="snakeGame-play">
     <canvas id="snakeGame"></canvas>
+    <button v-if="gameOver" @click="restartGame">Reiniciar</button>
   </div>
 </template>
 
@@ -193,6 +194,12 @@ export default {
           this.board.height / 20
       );
     },
+    restartGame() {
+      this.gameOver = false;
+      this.snake.size = INITIAL_SNAKE_SIZE;
+      this.snake.queue = [];
+      this.initialize();
+    },
   },
   mounted() {
     this.snakeGame = document.getElementById("snakeGame");
@@ -212,5 +219,15 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   animation-duration: 1.5s;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
 }
 </style>
