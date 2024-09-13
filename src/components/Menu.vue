@@ -2,7 +2,6 @@
 <template>
   <div id="menu-home">
     <div class="menu-container">
-      <h1>Menu</h1>
       <button @click="start" id="start">Iniciar</button>
     </div>
   </div>
@@ -32,9 +31,24 @@ export default {
 
 .menu-container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 300px;
+  background-image: url('../assets/menu-snake-game.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.5vw 3vw;
+  font-size: 2vw;
+  cursor: pointer;
 }
 </style>
