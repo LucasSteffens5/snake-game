@@ -17,7 +17,7 @@ Este repositório contém a implementação de um jogo da cobrinha utilizando Vu
 
 3. Inicie o servidor de desenvolvimento:
    ```bash
-   npm run serve
+   npm run dev
    ```
 
 4. Abra o navegador e acesse:
