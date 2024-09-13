@@ -6,12 +6,9 @@
 
 <script>
 import keyControlMixin from '../mixins/keyControlMixin.js';
-
+import { Colors } from '../enums/Colors.js';
 const GRID_SIZE = 40;
 const INITIAL_SNAKE_SIZE = 3;
-const BOARD_FILL_STYLE = "#f8cece";
-const SNAKE_FILL_STYLE = "#0a0a0a";
-const FOOD_FILL_STYLE = "#f60000";
 const GAME_OVER_TEXT = "GAME OVER";
 const SCORE_TEXT = "PONTUAÇÃO : ";
 
@@ -28,19 +25,19 @@ export default {
         height: window.innerHeight,
         width: window.innerWidth,
         gridSize: GRID_SIZE,
-        fillStyle: BOARD_FILL_STYLE,
+        fillStyle: Colors.BOARD_FILL,
       },
       snake: {
         positionX: 0,
         positionY: 0,
         size: INITIAL_SNAKE_SIZE,
         queue: [],
-        fillStyle: SNAKE_FILL_STYLE,
+        fillStyle: Colors.SNAKE_FILL,
       },
       food: {
         positionX: 0,
         positionY: 0,
-        fillStyle: FOOD_FILL_STYLE,
+        fillStyle: Colors.FOOD_FILL,
       },
     };
   },
@@ -148,7 +145,7 @@ export default {
       this.board.context.fillRect(0, 0, this.board.width, this.board.height);
     },
     renderGameOver() {
-      this.board.context.fillStyle = "rgba(2,2,2,0.99)";
+      this.board.context.fillStyle = Colors.GAME_OVER_TEXT;
       this.board.context.font = `${this.board.width / 10}px Arial`;
       this.board.context.fillText(GAME_OVER_TEXT, this.board.width / 5, this.board.height / 2.7);
     },
@@ -156,12 +153,11 @@ export default {
       let lineWidth = 1;
       this.snake.queue.forEach((element, index) => {
         if (index === this.snake.queue.length - 1) {
-          this.board.context.fillStyle = "#0131cb";
-          this.board.context.strokeStyle = "#ecf0f1";
+          this.board.context.strokeStyle = Colors.SNAKE_STROKE;
           this.board.context.lineWidth = lineWidth + 5;
         } else {
           this.board.context.fillStyle = this.snake.fillStyle;
-          this.board.context.strokeStyle = "#ecf0f1";
+          this.board.context.strokeStyle = Colors.SNAKE_STROKE;
           this.board.context.lineWidth = lineWidth;
           lineWidth += 0.3;
         }
@@ -189,7 +185,7 @@ export default {
       );
     },
     renderScore() {
-      this.board.context.fillStyle = "rgba(59,59,59,0.96)";
+      this.board.context.fillStyle = Colors.SCORE_TEXT;
       this.board.context.font = `${this.board.width / 100}px Arial`;
       this.board.context.fillText(
           `${SCORE_TEXT}${parseInt(this.snake.size - INITIAL_SNAKE_SIZE)}`,
