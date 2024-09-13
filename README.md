@@ -22,7 +22,7 @@ Este repositório contém a implementação de um jogo da cobrinha utilizando Vu
 
 4. Abra o navegador e acesse:
    ```
-   http://localhost:8080
+   http://http://localhost:5173
    ```
 
 ### Tecnologias Utilizadas
