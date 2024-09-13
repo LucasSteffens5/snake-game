@@ -7,7 +7,8 @@
 
 <script>
 import keyControlMixin from '../mixins/keyControlMixin.js';
-import { Colors } from '../enums/Colors.js';
+import {Colors} from '../enums/Colors.js';
+
 const GRID_SIZE = 40;
 const INITIAL_SNAKE_SIZE = 3;
 const GAME_OVER_TEXT = "GAME OVER";
@@ -80,16 +81,13 @@ export default {
     updateSnakePosition() {
       this.snake.positionX += this.velocity.positionX;
       this.snake.positionY += this.velocity.positionY;
-
-      if (this.snake.positionX < 0) {
-        this.snake.positionX = Math.round(this.board.width / this.board.gridSize) - 1;
-      } else if (this.snake.positionY < 0) {
-        this.snake.positionY = Math.round(this.board.height / this.board.gridSize);
-      } else if (this.snake.positionX > Math.round(this.board.width / this.board.gridSize)) {
-        this.snake.positionX = 0;
-      } else if (this.snake.positionY > Math.round(this.board.height / this.board.gridSize) - 1) {
-        this.snake.positionY = 0;
+      if (this.checkBoundaryCollision()) {
+        this.gameOver = true;
       }
+    },
+    checkBoundaryCollision() {
+      return this.snake.positionX < 0 || this.snake.positionX >= Math.round(this.board.width / this.board.gridSize) ||
+          this.snake.positionY < 0 || this.snake.positionY >= Math.round(this.board.height / this.board.gridSize);
     },
     checkCollisions() {
       this.snake.queue.forEach((element) => {
